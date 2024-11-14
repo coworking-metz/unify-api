@@ -23,7 +23,7 @@ def send_heartbeat(mac_addresses, location):
     # Prepare data payload
     data = {
         "key": ticket_backend_token,
-        "macAddresses": mac_addresses_str
+        "macAddresses": mac_addresses_str,
         "location": location
     }
     
