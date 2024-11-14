@@ -13,6 +13,8 @@ for device in devices:
     
     # Filter clients connected to this specific device
     connected_clients = [client for client in clients if client.get("ap_mac") == device.get("mac")]
+    for client in connected_clients:
+        print(f"    Client Name: {client.get('hostname') or 'Unknown'}, MAC: {client.get('mac')}, IP: {client.get('ip')}")
     
     # Collect MAC addresses of connected clients
     mac_addresses = [client.get("mac") for client in connected_clients]

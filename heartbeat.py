@@ -24,7 +24,7 @@ def send_heartbeat(mac_addresses, location):
     data = {
         "key": ticket_backend_token,
         "macAddresses": mac_addresses_str
-        # "location": location
+        "location": location
     }
     
     # Send the POST request
