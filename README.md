@@ -11,7 +11,13 @@ Ce programme est conçu pour envoyer un signal de heartbeat à ticket backend, c
 
 ## Prérequis
 
-Assurez-vous que Python 3 est installé, ainsi que les bibliothèques nécessaires. Vous pouvez installer les bibliothèques requises avec la commande suivante :
+Assurez-vous que Python 3 est installé. L'outil pip doît être dispo.
+
+```bash
+sudo apt install python3-pip
+``` 
+
+Ainsi que les bibliothèques nécessaires. Vous pouvez installer les bibliothèques requises avec la commande suivante :
 
 ```bash
 pip install requests python-dotenv
@@ -42,10 +48,10 @@ Le programme enverra un signal de heartbeat contenant les informations des clien
 Pour exécuter le script automatiquement toutes les 3 minutes, vous pouvez ajouter le script `./location` à crontab.
 
 
-Ajoutez la ligne suivante à la fin du fichier crontab pour exécuter le script toutes les 3 minutes :
+Ajoutez la ligne suivante à la fin du fichier crontab pour exécuter le script toutes les 3 minutes Exemple si le depot est installé dans `/opt/unify-api/location`
 
 ```crontab
-    */3 * * * * /chemin/vers/votre/dossier/location
+*/3 * * * * /opt/unify-api/location > /dev/null 2>&1
 ```
 
 Remplacez /chemin/vers/votre/dossier/location par le chemin complet du fichier location dans votre système.
