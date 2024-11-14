@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+
+from unifi_api import get_unifi_devices, get_connected_clients
+from heartbeat import send_heartbeat
+
+# Fetch the list of devices
+devices = get_unifi_devices()
+clients = get_connected_clients()
+
+for device in devices:
+    # Remove "routeur" from the device name for the location value
+    location = device.get("name").replace("routeur-", "").strip()
+    
+    # Filter clients connected to this specific device
+    connected_clients = [client for client in clients if client.get("ap_mac") == device.get("mac")]
+    
+    # Collect MAC addresses of connected clients
+    mac_addresses = [client.get("mac") for client in connected_clients]
+    
+    # If there are connected clients, send a heartbeat
+    if mac_addresses:
+        print(f"Sending heartbeat for device '{device.get('name')}' at location '{location}' with {len(mac_addresses)} clients.")
+        send_heartbeat(mac_addresses, location)
+    else:
+        print(f"No clients connected to device '{device.get('name')}'.")
