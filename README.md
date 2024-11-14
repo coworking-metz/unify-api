@@ -1,6 +1,6 @@
 # Programme de Heartbeat pour Unifi
 
-Ce programme est conçu pour envoyer un signal de heartbeat à un serveur backend, contenant des informations sur les clients connectés à chaque appareil UniFi du réseau. Ce script récupère les adresses MAC des clients et la localisation des appareils, puis envoie une requête POST avec ces informations à une URL spécifiée.
+Ce programme est conçu pour envoyer un signal de heartbeat à ticket backend, contenant des informations sur les clients connectés à chaque appareil UniFi du réseau (pour définir la valeur de `location`). Ce script récupère les adresses MAC des clients et la localisation des appareils, puis envoie une requête POST avec ces informations à l'URL heartbeat
 
 ## Contenu du Projet
 
