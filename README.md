@@ -20,7 +20,7 @@ sudo apt install python3-pip
 Ainsi que les bibliothèques nécessaires. Vous pouvez installer les bibliothèques requises avec la commande suivante :
 
 ```bash
-pip install requests python-dotenv
+pip3 install requests python-dotenv
 ``` 
 ## Configuration
 
